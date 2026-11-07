@@ -57,7 +57,7 @@ public class Menucontroller {
                 service.ubah(m);
             }
             view.pesan("Berhasil disimpan");
-            view.kosonkanForm();
+            view.kosongkanForm();
             muatData();
         } catch (NumberFormatException ex) {
             view.pesan(Menuservice.PESAN_INVALID);

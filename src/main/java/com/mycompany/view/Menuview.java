@@ -7,20 +7,17 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import com.mycompany.model.Menu;
 
+public class Menuview extends JFrame {
 
+    public JTextField txtNama = new JTextField(15);
+    public JTextField txtHarga = new JTextField(15);
+    public JComboBox<String> cmbKategori = new JComboBox<>(new String[]{"ID", "Nama", "Kategori", "Harga"});
+    public JButton btnTambah = new JButton("Tambah");
+    public JButton btnUbah = new JButton("Ubah");
+    public JButton btnHapus = new JButton("Hapus");
+    public DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Nama", "Kategori", "Harga"}, 0);
 
-    public class Menuview extends JFrame {
-
-        public JTextField txtNama = new JTextField(15);
-        public JTextField txtHarga = new JTextField(15);
-        public JComboBox<String> cmbKategori = new JComboBox<>(new String[]{"ID", "Nama", "Kategori", "Harga"});
-        public JButton btnTambah = new JButton("Tambah");
-        public JButton btnUbah = new JButton("Ubah");
-        public JButton btnHapus = new JButton("Hapus");
-        public DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Nama", "Kategori".
-
-    "Harga"}, 0);
-        public JTable table = new JTable(model);
+    public JTable table = new JTable(model);
 
     public Menuview() {
         super("Kelola Menu - SON AMPERA");
