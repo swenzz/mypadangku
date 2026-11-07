@@ -56,9 +56,9 @@ public class Menucontroller {
             } else {
                 service.ubah(m);
             }
-            view.pesan("Berhasil disimpan");
             view.kosongkanForm();
             muatData();
+            view.pesan("Berhasil disimpan");
         } catch (NumberFormatException ex) {
             view.pesan(Menuservice.PESAN_INVALID);
         } catch (IllegalArgumentException ex) {
