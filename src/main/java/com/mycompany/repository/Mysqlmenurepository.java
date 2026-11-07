@@ -8,7 +8,7 @@ import com.mycompany.model.Menu;
 public class Mysqlmenurepository implements Menurepository {
 
     private static final String URL = "jdbc:mysql://localhost:3306/db_sonampera";
-    private static final String USER = "skennatic";
+    private static final String USER = "root";
     private static final String PASS = "munjul100";
 
     private Connection conn() throws SQLException {
