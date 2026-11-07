@@ -25,7 +25,6 @@ import com.mycompany.model.Menu;
         super("Kelola Menu - SON AMPERA");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout(8, 8));
-
     }
 
     public void tampilkan(List<Menu> list) {

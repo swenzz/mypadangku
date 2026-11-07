@@ -2,14 +2,14 @@ package com.mycompany.service;
 
 import java.util.List;
 import com.mycompany.model.Menu;
-import repository.MenuRepository;
+import com.mycompany.repository.Menurepository;
 
 public class Menuservice {
 
     public static final String PESAN_INVALID = "Data Input Tidak Valid";
-    private final MenuRepository repo;
+    private final Menurepository repo;
 
-    public Menuservice(MenuRepository repo) {
+    public Menuservice(Menurepository repo) {
         this.repo = repo;
     }
 
