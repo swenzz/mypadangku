@@ -18,6 +18,7 @@ import com.mycompany.model.Menu;
         public JButton btnUbah = new JButton("Ubah");
         public JButton btnHapus = new JButton("Hapus");
         public DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Nama", "Kategori".
+
     "Harga"}, 0);
         public JTable table = new JTable(model);
 
