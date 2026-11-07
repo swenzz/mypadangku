@@ -28,6 +28,41 @@ public class Mysqlmenurepository implements Menurepository {
 
     @Override
     public void save(Menu m) throws SQLException {
+        try (Connection c = conn(); PreparedStatement ps = c.prepareStatement(
+                "UPDATE menu SET nama_menu=?, kategori=?, harga_menu=? WHERE id_menu=?")) {
+            ps.setString(1, m.nama);
+            ps.setString(2, m.kategori);
+            ps.setInt(3, m.harga);
+            ps.setString(4, m.id);
+            ps.executeUpdate();
+        }
+    }
 
+    @Override
+    public void update(Menu m) throws SQLException {
+        try (Connection c = conn(); PreparedStatement ps = c.prepareStatement("UPDATE menu SET nama_menu=?, kategori=?, harga_menu=? WHERE id_menu=?")) {
+            ps.setString(1, m.nama);
+            ps.setString(2, m.kategori);
+            ps.setInt(3, m.harga);
+            ps.setString(4, m.id);
+            ps.executeUpdate();
+        }
+    }
+
+    @Override
+    public void delete(String id) throws SQLException {
+        try (Connection c = conn(); PreparedStatement ps = c.prepareStatement("DELETE FROM menu WHERE id_menu=?")) {
+            ps.setString(1, id);
+            ps.executeUpdate();
+        }
+    }
+
+    @Override
+    public String nextId() throws SQLException {
+        try (Connection c = conn(); ResultSet rs = c.createStatement().executeQuery(
+                "SELECT id_menu FROM menu ORDER BY id_menu DESC LIMIT 1")) {
+            int n = rs.next() ? Integer.parseInt(rs.getString(1).substring(2)) + 1 : 1;
+            return String.format("MN%03d", n);
+        }
     }
 }
